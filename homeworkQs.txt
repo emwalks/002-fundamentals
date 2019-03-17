@@ -1,0 +1,18 @@
+What might happen if we just created the date as a new date (every time) 
+in the wakeup function? Why does this make it difficult to test the function?
+So the code might look like this:
+
+function wakeup() {
+
+    const currentHour = new Date().getHours();
+
+    if(currentHour > 12 ) {
+        return "Ugggggh its too early - I'm not waking up yet";
+    }
+    else {
+        return "Get up!! You're wasting the day";
+    }
+}
+
+Is it because it would change every time you ran it so it would pass at some time of day but not others
+I.e. you could get a false positive/ false negative result?
